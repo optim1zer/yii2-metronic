@@ -4,7 +4,7 @@
  * @license http://www.digitaldeals.cz/license/
  */
 
-namespace  dlds\metronic\bundles;
+namespace  optim1zer\metronic\bundles;
 
 use yii\web\AssetBundle;
 
@@ -13,12 +13,12 @@ use yii\web\AssetBundle;
  */
 class SpinnerAsset extends AssetBundle
 {
-    public $sourcePath = '@dlds/metronic/assets';
+    public $sourcePath = '@optim1zer/metronic/assets';
     public $js = [
         'plugins/fuelux/js/spinner.min.js',
     ];
 
     public $depends = [
-        'dlds\metronic\bundles\CoreAsset',
+        'optim1zer\metronic\bundles\CoreAsset',
     ];
 }

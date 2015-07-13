@@ -1,16 +1,11 @@
 <?php
-/**
- * @link http://www.digitaldeals.cz/
- * @copyright Copyright (c) 2014 Digital Deals s.r.o. 
- * @license http://www.digitaldeals.cz/license/
- */
 
-namespace dlds\metronic;
+namespace optim1zer\metronic;
 
 use Yii;
 use yii\web\AssetBundle;
 use yii\base\InvalidConfigException;
-use dlds\metronic\bundles\ThemeAsset;
+use optim1zer\metronic\bundles\ThemeAsset;
 
 /**
  * This is the class of Metronic Component
@@ -25,7 +20,7 @@ class Metronic extends \yii\base\Component {
     /**
      * Assets link
      */
-    const ASSETS_LINK = __DIR__.'/assets';
+    const ASSETS_LINK = 'z:\\domains\\yii2crm\\vendor\\optim1zer\\yii2-metronic\\assets';
 
     /**
      * Theme
@@ -159,7 +154,7 @@ class Metronic extends \yii\base\Component {
     /**
      * Classes paths
      */
-    const CLASS_HTML = '@vendor/dlds/yii2-metronic/helpers/Html.php';
+    const CLASS_HTML = '@vendor/optim1zer/yii2-metronic/helpers/Html.php';
 
     /**
      * @var string version
@@ -226,12 +221,6 @@ class Metronic extends \yii\base\Component {
      */
     public function init()
     {
-        $htmlClass = \yii\helpers\ArrayHelper::getValue(Yii::$classMap, 'yii\helpers\Html', null);
-
-        if ($htmlClass != self::CLASS_HTML)
-        {
-            throw new InvalidConfigException('Default Yii2 Html helper class is not allowed. For using Metronic theme put Yii::$classMap[\'yii\\helpers\\Html\'] = \''.self::CLASS_HTML.'\'; into your bootstrap.php');
-        }
 
         if (self::SIDEBAR_FIXED === $this->sidebarOption && self::SIDEBAR_MENU_HOVER === $this->sidebarMenu)
         {

@@ -6,24 +6,24 @@
  * @license http://www.digitaldeals.cz/license/
  */
 
-namespace dlds\metronic\bundles;
+namespace optim1zer\metronic\bundles;
 
 use yii\web\AssetBundle;
 use yii\helpers\ArrayHelper;
-use dlds\metronic\Metronic;
+use optim1zer\metronic\Metronic;
 
 class StyleBasedAsset extends AssetBundle {
 
     /**
      * @var string source assets path
      */
-    public $sourcePath = '@dlds/metronic/assets';
+    public $sourcePath = '@optim1zer/metronic/assets';
 
     /**
      * @var array depended bundles
      */
     public $depends = [
-        'dlds\metronic\bundles\CoreAsset',
+        'optim1zer\metronic\bundles\CoreAsset',
     ];
 
     /**

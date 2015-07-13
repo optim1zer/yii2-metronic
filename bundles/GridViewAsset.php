@@ -5,7 +5,7 @@
  * @license http://www.digitaldeals.cz/license/
  */
 
-namespace dlds\metronic\bundles;
+namespace optim1zer\metronic\bundles;
 
 use yii\web\AssetBundle;
 
@@ -14,7 +14,7 @@ class GridViewAsset extends AssetBundle {
     /**
      * @var string source path
      */
-    public $sourcePath = '@dlds/metronic/assets';
+    public $sourcePath = '@optim1zer/metronic/assets';
 
     /**
      * @var array CSS

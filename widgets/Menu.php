@@ -5,9 +5,9 @@
  * @license http://yii2metronic.icron.org/license.html
  */
 
-namespace dlds\metronic\widgets;
+namespace optim1zer\metronic\widgets;
 
-use dlds\metronic\Metronic;
+use optim1zer\metronic\Metronic;
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
@@ -296,7 +296,6 @@ class Menu extends \yii\widgets\Menu {
         $this->options['data-slide-speed'] = 200;
         $this->options['data-auto-scroll'] = 'true';
         $this->options['data-keep-expanded'] = 'false';
-        $this->options['data-height'] = 261;
     }
 
 }

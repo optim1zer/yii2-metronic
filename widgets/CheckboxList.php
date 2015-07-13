@@ -3,7 +3,7 @@
  * DateRangePickerAsset for dateRangePicker widget.
  */
 
-namespace dlds\metronic\widgets;
+namespace optim1zer\metronic\widgets;
 
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;

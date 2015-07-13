@@ -5,9 +5,9 @@
  * @license http://yii2metronic.icron.org/license.html
  */
 
-namespace dlds\metronic\widgets;
+namespace optim1zer\metronic\widgets;
 
-use dlds\metronic\Metronic;
+use optim1zer\metronic\Metronic;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;

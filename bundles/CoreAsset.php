@@ -5,7 +5,7 @@
  * @license http://www.digitaldeals.cz/license/
  */
 
-namespace dlds\metronic\bundles;
+namespace optim1zer\metronic\bundles;
 
 use yii\web\AssetBundle;
 
@@ -14,13 +14,13 @@ class CoreAsset extends AssetBundle {
     /**
      * @var string source assets path
      */
-    public $sourcePath = '@dlds/metronic/assets';
+    public $sourcePath = '@optim1zer/metronic/assets';
 
     /**
      * @var array depended packages
      */
     public $depends = [
-        'dlds\metronic\bundles\FontAsset',
+        'optim1zer\metronic\bundles\FontAsset',
         'yii\bootstrap\BootstrapPluginAsset',
     ];
 

@@ -4,7 +4,7 @@
  * @license http://www.digitaldeals.cz/license/
  */
 
-namespace  dlds\metronic\bundles;
+namespace  optim1zer\metronic\bundles;
 
 use yii\web\AssetBundle;
 
@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
  */
 class ModalAsset extends AssetBundle
 {
-    public $sourcePath = '@dlds/metronic/assets';
+    public $sourcePath = '@optim1zer/metronic/assets';
     public $js = [
         'global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js',
         'global/plugins/bootstrap-modal/js/bootstrap-modal.js',
@@ -25,6 +25,6 @@ class ModalAsset extends AssetBundle
     ];
 
     public $depends = [
-        'dlds\metronic\bundles\CoreAsset',
+        'optim1zer\metronic\bundles\CoreAsset',
     ];
 }
