@@ -14,14 +14,15 @@ use yii\web\AssetBundle;
  */
 class DateRangePickerAsset extends AssetBundle {
 
-    public $sourcePath = '@optim1zer/metronic/assets';
+    public $sourcePath = '@assets';
+
     public $js = [
-        'plugins/bootstrap-daterangepicker/moment.min.js',
-        'plugins/bootstrap-daterangepicker/daterangepicker.js',
+        'global/plugins/bootstrap-daterangepicker/moment.min.js',
+        'global/plugins/bootstrap-daterangepicker/daterangepicker.js',
     ];
     public $css = [
-        'plugins/bootstrap-daterangepicker/daterangepicker-bs3.css',
-        'plugins/bootstrap-datetimepicker/css/datetimepicker.css',
+        'global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css',
+        'global/plugins/bootstrap-datetimepicker/css/datetimepicker.css',
     ];
     public $depends = [
         'optim1zer\metronic\bundles\CoreAsset',

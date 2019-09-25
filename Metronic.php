@@ -3,9 +3,6 @@
 namespace optim1zer\metronic;
 
 use Yii;
-use yii\web\AssetBundle;
-use yii\base\InvalidConfigException;
-use optim1zer\metronic\bundles\ThemeAsset;
 
 /**
  * This is the class of Metronic Component
@@ -13,28 +10,15 @@ use optim1zer\metronic\bundles\ThemeAsset;
 class Metronic extends \yii\base\Component {
 
     /**
-     * @var AssetBundle
+     * layout
      */
-    public static $assetsBundle;
-
-    /**
-     * Assets link
-     */
-    const ASSETS_LINK = 'z:\\domains\\yii2crm\\vendor\\optim1zer\\yii2-metronic\\assets';
-
-    /**
-     * Theme
-     */
-    const VERSION_1 = 'layout';
-    const VERSION_2 = 'layout2';
-    const VERSION_3 = 'layout3';
-    const VERSION_4 = 'layout4';
-
-    /**
-     * Theme
-     */
-    const THEME_DARK = 'default';
-    const THEME_LIGHT = 'light';
+    const LAYOUT_1 = 'layout';
+    const LAYOUT_2 = 'layout2';
+    const LAYOUT_3 = 'layout3';
+    const LAYOUT_4 = 'layout4';
+    const LAYOUT_5 = 'layout5';
+    const LAYOUT_6 = 'layout6';
+    const LAYOUT_7 = 'layout7';
 
     /**
      * Style
@@ -83,12 +67,6 @@ class Metronic extends \yii\base\Component {
      */
     const FOOTER_DEFAULT = 'default';
     const FOOTER_FIXED = 'fixed';
-
-    /**
-     * Search string
-     */
-    const PARAM_VERSION = '{version}';
-    const PARAM_THEME = '{theme}';
 
     /**
      * UI Colors blue
@@ -152,22 +130,17 @@ class Metronic extends \yii\base\Component {
     const UI_COLOR_GREY_GALLERY = 'grey-gallery';
 
     /**
-     * Classes paths
-     */
-    const CLASS_HTML = '@vendor/optim1zer/yii2-metronic/helpers/Html.php';
-
-    /**
      * @var string version
      */
-    public $version = self::VERSION_4;
+    public $layout = self::LAYOUT_2;
 
     /**
      * @var string Theme
      */
-    public $theme = self::THEME_LIGHT;
+    public $themeCss = 'default';
 
     /**
-     * @var string Theme style
+     * @var string Theme corner style
      */
     public $style = self::STYLE_ROUNDED;
 
@@ -184,7 +157,7 @@ class Metronic extends \yii\base\Component {
     /**
      * @var string Header dropdowns
      */
-    public $headerDropdown = self::HEADER_DROPDOWN_DARK;
+    public $headerDropdown = self::HEADER_DROPDOWN_LIGHT;
 
     /**
      * @var string Sidebar display
@@ -194,7 +167,7 @@ class Metronic extends \yii\base\Component {
     /**
      * @var string Sidebar display
      */
-    public $sidebarMenu = self::SIDEBAR_MENU_ACCORDION;
+    public $sidebarMenu = self::SIDEBAR_MENU_HOVER;
 
     /**
      * @var string Sidebar position
@@ -209,75 +182,16 @@ class Metronic extends \yii\base\Component {
     /**
      * @var array resources paths
      */
-    public $resources;
+    public $assetsPath = '@app/views/layouts/assets';
 
-    /**
-     * @var string Component name used in the application
-     */
-    public static $componentName = 'metronic';
-
-    /**
-     * Inits module
-     */
-    public function init()
-    {
-
-        if (self::SIDEBAR_FIXED === $this->sidebarOption && self::SIDEBAR_MENU_HOVER === $this->sidebarMenu)
-        {
-            throw new InvalidConfigException('Hover Sidebar Menu is not compatible with Fixed Sidebar Mode. Select Default Sidebar Mode Instead.');
-        }
-
-        if (!$this->resources)
-        {
-            throw new InvalidConfigException('You have to specify resources locations to be able to create symbolic links. Specify "admin" and "global" theme folder locations.');
-        }
-
-        if (!is_link(self::ASSETS_LINK) && !is_dir(self::ASSETS_LINK))
-        {
-            symlink($this->resources, self::ASSETS_LINK);
-        }
-    }
-
-    public function parseAssetsParams(&$string)
-    {
-        if (preg_match('/\{[a-z]+\}/', $string))
-        {
-            $string = str_replace(static::PARAM_VERSION, $this->version, $string);
-
-            $string = str_replace(static::PARAM_THEME, $this->theme, $string);
-        }
-    }
+    public $assetBundle;
 
     /**
      * @return Metronic Get Metronic component
      */
     public static function getComponent()
     {
-        return Yii::$app->{static::$componentName};
+        return Yii::$app->metronic;
     }
 
-    /**
-     * Get base url to metronic assets
-     * @param $view View
-     * @return string
-     */
-    public static function getAssetsUrl($view)
-    {
-        if (static::$assetsBundle === null)
-        {
-            static::$assetsBundle = static::registerThemeAsset($view);
-        }
-
-        return (static::$assetsBundle instanceof AssetBundle) ? static::$assetsBundle->baseUrl : '';
-    }
-
-    /**
-     * Register Theme Asset
-     * @param $view View
-     * @return AssetBundle
-     */
-    public static function registerThemeAsset($view)
-    {
-        return static::$assetsBundle = ThemeAsset::register($view);
-    }
 }

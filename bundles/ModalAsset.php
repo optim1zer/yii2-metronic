@@ -13,7 +13,9 @@ use yii\web\AssetBundle;
  */
 class ModalAsset extends AssetBundle
 {
-    public $sourcePath = '@optim1zer/metronic/assets';
+
+    public $sourcePath = '@assets';
+
     public $js = [
         'global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js',
         'global/plugins/bootstrap-modal/js/bootstrap-modal.js',
@@ -27,4 +29,5 @@ class ModalAsset extends AssetBundle
     public $depends = [
         'optim1zer\metronic\bundles\CoreAsset',
     ];
+
 }

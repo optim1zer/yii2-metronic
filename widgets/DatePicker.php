@@ -7,10 +7,12 @@
 
 namespace optim1zer\metronic\widgets;
 
+use Yii;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\web\JsExpression;
 use yii\web\View;
+use optim1zer\metronic\bundles\DatePickerAsset;
 
 /**
  * DatePicker renders an datepicker jQuery UI widget.

@@ -13,18 +13,19 @@ use yii\web\AssetBundle;
  */
 class Select2Asset extends AssetBundle
 {
-    public $sourcePath = '@optim1zer/metronic/assets';
+    public $sourcePath = '@assets';
+
     public $js = [
         'global/plugins/select2/select2.min.js',
     ];
 
     public $css = [
         'global/plugins/select2/select2.css',
-        'global/plugins/select2/select2-bootstrap.css',
     ];
 
 
     public $depends = [
         'optim1zer\metronic\bundles\CoreAsset',
     ];
+
 }

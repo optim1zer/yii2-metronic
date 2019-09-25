@@ -13,16 +13,18 @@ use yii\web\AssetBundle;
  */
 class NotificationAsset extends AssetBundle
 {
-    public $sourcePath = '@optim1zer/metronic/assets';
+    public $sourcePath = '@assets';
+
     public $js = [
-        'plugins/bootstrap-toastr/toastr.min.js',
+        'global/plugins/bootstrap-toastr/toastr.min.js',
     ];
 
     public $css = [
-        'plugins/bootstrap-toastr/toastr.min.css',
+        'global/plugins/bootstrap-toastr/toastr.min.css',
     ];
 
     public $depends = [
         'optim1zer\metronic\bundles\CoreAsset',
     ];
+
 }

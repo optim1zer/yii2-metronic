@@ -121,7 +121,7 @@ class ActiveForm extends \yii\widgets\ActiveForm {
         }
         if (!isset($this->fieldConfig['class']))
         {
-            $this->fieldConfig['class'] = ActiveField::className();
+            $this->fieldConfig['class'] = ActiveField::class;
         }
         if ($this->fake)
         {

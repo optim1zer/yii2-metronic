@@ -11,10 +11,7 @@ use yii\web\AssetBundle;
 
 class GridViewAsset extends AssetBundle {
 
-    /**
-     * @var string source path
-     */
-    public $sourcePath = '@optim1zer/metronic/assets';
+    public $sourcePath = '@assets';
 
     /**
      * @var array CSS

@@ -12,9 +12,10 @@ use yii\web\AssetBundle;
 /**
  * SpinnerAsset for spinner widget.
  */
-class ListViewSortableAsset extends AssetBundle {
+class ListViewSortableAsset extends AssetBundle
+{
 
-    public $sourcePath = '@optim1zer/metronic/assets';
+    public $sourcePath = '@assets';
 
     /**
      * @var array JS

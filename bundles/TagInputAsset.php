@@ -11,9 +11,11 @@ use yii\web\AssetBundle;
 /**
  * SpinnerAsset for spinner widget.
  */
-class TagInputAsset extends AssetBundle {
+class TagInputAsset extends AssetBundle
+{
 
-    public $sourcePath = '@optim1zer/metronic/assets';
+    public $sourcePath = '@assets';
+
     public $js = [
         'global/plugins/jquery-tags-input/jquery.tagsinput.min.js',
     ];

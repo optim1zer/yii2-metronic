@@ -135,7 +135,7 @@ class Nav extends \yii\bootstrap\Nav {
         }
 
         $items = ArrayHelper::getValue($item, 'items');
-        
+
         if ($items === null)
         {
             return parent::renderItem($item);
@@ -145,7 +145,7 @@ class Nav extends \yii\bootstrap\Nav {
         {
             throw new InvalidConfigException("The 'label' option is required.");
         }
-        
+
         $dropdownType = ArrayHelper::getValue($item, 'dropdownType', self::TYPE_DEFAULT);
         $options = ArrayHelper::getValue($item, 'options', []);
 
@@ -213,7 +213,7 @@ class Nav extends \yii\bootstrap\Nav {
         $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
 
         $linkOptions['data-toggle'] = 'dropdown';
-        $linkOptions['data-hover'] = 'dropdown';
+        //$linkOptions['data-hover'] = 'dropdown'; // works only in Chrome
         $linkOptions['data-close-others'] = 'true';
 
         Html::addCssClass($linkOptions, 'dropdown-toggle');
@@ -257,7 +257,7 @@ class Nav extends \yii\bootstrap\Nav {
                     'items' => $items,
                     'encodeLabels' => $this->encodeLabels,
                     'clientOptions' => false,
-                    'options' => $options,
+                    //'options' => $options,
             ]);
         }
 

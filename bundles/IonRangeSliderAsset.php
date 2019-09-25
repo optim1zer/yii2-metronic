@@ -12,9 +12,11 @@ use yii\web\AssetBundle;
 /**
  * IonRangeSliderAsset for slider widget.
  */
-class IonRangeSliderAsset extends AssetBundle {
+class IonRangeSliderAsset extends AssetBundle
+{
 
-    public $sourcePath = '@optim1zer/metronic/assets';
+    public $sourcePath = '@assets';
+
     public $js = [
         'global/plugins/ion.rangeslider/js/ion-rangeSlider/ion.rangeSlider.min.js',
     ];

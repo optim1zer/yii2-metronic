@@ -13,7 +13,9 @@ use yii\web\AssetBundle;
  */
 class MultiSelectAsset extends AssetBundle
 {
-    public $sourcePath = '@optim1zer/metronic/assets';
+
+    public $sourcePath = '@assets';
+
     public $js = [
         'plugins/jquery-multi-select/js/jquery.multi-select.js',
     ];
@@ -26,4 +28,5 @@ class MultiSelectAsset extends AssetBundle
     public $depends = [
         'optim1zer\metronic\bundles\CoreAsset',
     ];
+
 }

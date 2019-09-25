@@ -14,7 +14,7 @@ use yii\web\AssetBundle;
  */
 class GridViewSortableAsset extends AssetBundle {
 
-    public $sourcePath = '@optim1zer/metronic/assets';
+    public $sourcePath = '@assets';
 
     /**
      * @var array JS

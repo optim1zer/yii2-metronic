@@ -13,7 +13,8 @@ use yii\web\AssetBundle;
  */
 class SpinnerAsset extends AssetBundle
 {
-    public $sourcePath = '@optim1zer/metronic/assets';
+    public $sourcePath = '@assets';
+
     public $js = [
         'plugins/fuelux/js/spinner.min.js',
     ];
@@ -21,4 +22,5 @@ class SpinnerAsset extends AssetBundle
     public $depends = [
         'optim1zer\metronic\bundles\CoreAsset',
     ];
+
 }

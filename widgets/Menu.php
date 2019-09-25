@@ -8,6 +8,7 @@
 namespace optim1zer\metronic\widgets;
 
 use optim1zer\metronic\Metronic;
+use optim1zer\metronic\bundles\ThemeAsset;
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
@@ -108,23 +109,9 @@ class Menu extends \yii\widgets\Menu {
      */
     public function init()
     {
-        Metronic::registerThemeAsset($this->getView());
+        ThemeAsset::register($this->getView());
 
         $this->_initOptions();
-    }
-
-    /**
-     * Renders the widget.
-     */
-    public function run()
-    {
-        echo Html::beginTag('div', ['class' => 'page-sidebar-wrapper']);
-        echo Html::beginTag('div', ['class' => 'page-sidebar navbar-collapse collapse']);
-
-        parent::run();
-
-        echo Html::endTag('div');
-        echo Html::endTag('div');
     }
 
     /**
@@ -244,7 +231,13 @@ class Menu extends \yii\widgets\Menu {
 
         if ($icon)
         {
-            return Html::tag('i', '', ['class' => $icon]);
+            $counter = ArrayHelper::getValue($item, 'counter', null);
+            if ($counter) {
+                $counter = Html::tag('span', $counter, ['class'=>'badge bg-red-intense']);
+            } else {
+                $counter = '';
+            }
+            return Html::tag('i', $counter, ['class' => $icon]);
         }
 
         return '';
@@ -263,12 +256,16 @@ class Menu extends \yii\widgets\Menu {
 
         $items = ArrayHelper::getValue($item, 'items', []);
 
+        $out = '';
+        if ($active) {
+            $out .= Html::tag('span', '', ['class'=>'selected']);
+        }
         if (!empty($items))
         {
-            return Html::tag('span', '', ['class' => 'arrow' . ($active ? ' open' : '')]);
+            $out .= Html::tag('span', '', ['class' => 'arrow' . ($active ? ' open' : '')]);
         }
 
-        return '';
+        return $out;
     }
 
     /**
@@ -288,7 +285,7 @@ class Menu extends \yii\widgets\Menu {
     {
         Html::addCssClass($this->options, 'page-sidebar-menu');
 
-        if (Metronic::SIDEBAR_MENU_HOVER === Metronic::getComponent()->sidebarMenu)
+        if (Metronic::SIDEBAR_MENU_HOVER === Yii::$app->metronic->sidebarMenu)
         {
             Html::addCssClass($this->options, 'page-sidebar-menu-hover-submenu');
         }

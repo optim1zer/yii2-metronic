@@ -1,57 +1,23 @@
 <?php
 
-/**
- * @link http://www.digitaldeals.cz/
- * @copyright Copyright (c) 2014 Digital Deals s.r.o. 
- * @license http://www.digitaldeals.cz/license/
- */
-
 namespace optim1zer\metronic\bundles;
 
+use Yii;
 use yii\web\AssetBundle;
 use yii\helpers\ArrayHelper;
 use optim1zer\metronic\Metronic;
 
-class StyleBasedAsset extends AssetBundle {
+class StyleBasedAsset extends AssetBundle
+{
 
-    /**
-     * @var string source assets path
-     */
-    public $sourcePath = '@optim1zer/metronic/assets';
+    public $sourcePath = '@assets';
 
-    /**
-     * @var array depended bundles
-     */
-    public $depends = [
-        'optim1zer\metronic\bundles\CoreAsset',
-    ];
-
-    /**
-     * @var array css assets
-     */
     public $css = [
         'global/css/plugins.css',
     ];
 
-    /**
-     * @var array js assets
-     */
-    public $js = [
-            //'scripts/layout.js',
-            //'scripts/app.js',
-            //'scripts/init.js',
-    ];
-
-    /**
-     * @var array style based css
-     */
-    private $styleBasedCss = [
-        Metronic::STYLE_SQUARE => [
-            'global/css/components.css',
-        ],
-        Metronic::STYLE_ROUNDED => [
-            'global/css/components-rounded.css',
-        ],
+    public $depends = [
+        'optim1zer\metronic\bundles\CoreAsset',
     ];
 
     /**
@@ -59,17 +25,11 @@ class StyleBasedAsset extends AssetBundle {
      */
     public function init()
     {
-        $this->_handleStyleBased();
-
+        // добавляем только если bundle не минифицирован
+        if (!empty($this->css)) {
+            $this->css[] = Yii::$app->metronic->style == Metronic::STYLE_SQUARE? 'global/css/components.css': 'global/css/components-rounded.css';
+        }
         return parent::init();
-    }
-
-    /**
-     * Handles style based files
-     */
-    private function _handleStyleBased()
-    {
-        $this->css = ArrayHelper::merge($this->styleBasedCss[Metronic::getComponent()->style], $this->css);
     }
 
 }

@@ -9,12 +9,10 @@ namespace optim1zer\metronic\bundles;
 
 use yii\web\AssetBundle;
 
-class TreeAsset extends AssetBundle {
+class TreeAsset extends AssetBundle
+{
 
-    /**
-     * @var string source path
-     */
-    public $sourcePath = '@optim1zer/metronic/assets';
+    public $sourcePath = '@assets';
 
     /**
      * @var array CSS
@@ -22,10 +20,10 @@ class TreeAsset extends AssetBundle {
     public $css = [
         'global/plugins/jstree/dist/themes/default/style.min.css',
     ];
-    public $js = [  
+    public $js = [
         'global/plugins/jstree/dist/jstree.min.js',
     ];
-    
+
     /**
      * @var array depends on
      */
